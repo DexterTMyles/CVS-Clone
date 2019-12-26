@@ -1,0 +1,162 @@
+@import "config";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html body {
+  height: 100%;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1 0 auto;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  overflow: none;
+}
+
+.app-header {
+  background-color: $primary-color;
+  box-shadow: 3px 3px 10px #888;
+
+  .logo {
+    width: 170px;
+    margin-bottom: 16px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+  }
+
+  input[type="text"] {
+    padding: 7px;
+    width: 300px;
+    border-radius: 3px;
+  }
+}
+
+.subheader {
+  background-color: $secondary-color;
+  color: #fff;
+  box-shadow: 3px 3px 10px #888;
+  margin: 0 auto 16px auto;
+  width: 90%;
+  font-size: 14px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p {
+    margin: 4px;
+  }
+
+  img {
+    width: 40px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    border: 1px #ccc solid;
+    padding: 10px;
+    box-shadow: 1px 1px 2px #ccc;
+
+    img {
+      width: 30px;
+      align-self: flex-end;
+    }
+
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      color: $secondary-color;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.app-footer {
+  background: #f4f4f4;
+  color: #444;
+  padding: 10px;
+  font-size: 14px;
+  margin-top: 10px;
+  flex-shrink: 0;
+
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+
+    li {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        font-size: 22px;
+      }
+    }
+  }
+}
+
+/* SPLASH*/
+#splash {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $primary-color;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &.fade {
+    opacity: 0;
+  }
+
+  img {
+    width: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+      width: 60px;
+    }
+  }
+}
